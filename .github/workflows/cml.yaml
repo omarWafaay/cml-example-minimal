@@ -16,4 +16,4 @@ jobs:
           echo '![](./plot.png "Confusion Matrix")' >> report.md
           cml comment create report.md
         env:
-          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
