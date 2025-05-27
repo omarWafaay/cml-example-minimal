@@ -1,4 +1,5 @@
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
 import numpy as np
@@ -9,9 +10,8 @@ y_train = np.genfromtxt("data/train_labels.csv")
 X_test = np.genfromtxt("data/test_features.csv")
 y_test = np.genfromtxt("data/test_labels.csv")
 
-# Fit a model
-depth = 25
-clf = RandomForestClassifier(max_depth=depth)
+# Modify the hyperparameters
+clf = LogisticRegression(C=0.1, max_iter=200)  # <-- You tweak this
 clf.fit(X_train, y_train)
 
 acc = clf.score(X_test, y_test)
