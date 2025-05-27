@@ -11,7 +11,7 @@ X_test = np.genfromtxt("data/test_features.csv")
 y_test = np.genfromtxt("data/test_labels.csv")
 
 # Modify the hyperparameters
-clf = LogisticRegression(C=0.1, max_iter=150)  # <-- You tweak this
+clf = LogisticRegression(C=0.1, max_iter=10)  # <-- You tweak this
 clf.fit(X_train, y_train)
 
 acc = clf.score(X_test, y_test)
